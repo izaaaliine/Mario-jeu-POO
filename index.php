@@ -10,9 +10,9 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recommencer'])) {
     // Détruire la session
     session_destroy();
- echo "la session a été détruite";
+
   session_start();
-    echo "Une nouvelle session a été démarrée.";
+ 
 
 }
 
@@ -49,9 +49,6 @@ $kamek2 = new Kamek("kamek2", "img/kamek.png");
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <form method="post" id="form" action="">
-            <input type="submit" class="recommencer" name="recommencer" value="Recommencer">
-    </form> 
   <div class="j1">
     <h2>
       <?php echo $_SESSION['joueur1']->getNom(); ?>
@@ -131,6 +128,9 @@ $kamek2 = new Kamek("kamek2", "img/kamek.png");
       </form>
     </div>
   </div>
+    <form method="post" id="form" action="">
+            <input type="submit" class="recommencer" name="recommencer" value="Recommencer">
+    </form> 
   <script src="scripts/script.js"></script>
   
 </body>
