@@ -2,18 +2,15 @@
 
 require_once "classes/joueurs.php";
 require_once "classes/personnages.php";
-require "deroulement/attaques.php";
-// require "deroulement/tourAtour.php";
 
 session_start();
+require "deroulement/attaques.php";
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['recommencer'])) {
-    // Détruire la session
-    session_destroy();
-
+  session_destroy();
   session_start();
- 
-
 }
 
 if (!isset($_SESSION['joueur1'])) {
@@ -23,11 +20,6 @@ if (!isset($_SESSION['joueur1'])) {
 if (!isset($_SESSION['joueur2'])) {
     $_SESSION['joueur2'] = new Joueurs("Joueur 2", 10);
 }
-
-// if ($_SERVER["REQUEST_METHOD"] != "POST") {
-//     $_SESSION['joueur1']['vies'] = 10;
-//     $_SESSION['joueur2']['vies'] = 10;
-// }
 
 
 $mario1 = new Mario("mario1", "img/mario.png");

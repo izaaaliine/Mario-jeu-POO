@@ -3,7 +3,6 @@ require "deroulement/jeu.php";
 
 // attaque MARIO J1
 if (isset($_POST["attaque1j1"])) {
-        echo "ok";
         perdreVie("joueur2", 1);
         } 
 // spéciale MARIO J1
